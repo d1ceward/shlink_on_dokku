@@ -1,0 +1,5 @@
+ARG SHLINK_VERSION="3.7.3"
+
+FROM shlinkio/shlink:${SHLINK_VERSION}
+
+EXPOSE 5000/tcp
