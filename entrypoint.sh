@@ -20,18 +20,4 @@ export DB_NAME=$SHLINK_DB_DATABASE
 export DB_USER=$SHLINK_DB_USER
 export DB_PASSWORD=$SHLINK_DB_PASSWORD
 
-flags="--no-interaction --clear-db-cache"
-
-# Skip downloading GeoLite2 db file if the license key env var was not defined or skipping was explicitly set
-if [ -z "${GEOLITE_LICENSE_KEY}" ] || [ "${SKIP_INITIAL_GEOLITE_DOWNLOAD}" = "true" ]; then
-  flags="${flags} --skip-download-geolite"
-fi
-
-# If INITIAL_API_KEY was provided, create an initial API key
-if [ -n "${INITIAL_API_KEY}" ]; then
-  flags="${flags} --initial-api-key=${INITIAL_API_KEY}"
-fi
-
-php vendor/bin/shlink-installer init ${flags}
-
 exec "$@"
