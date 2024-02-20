@@ -17,4 +17,4 @@ EXPOSE 80/tcp
 
 ENTRYPOINT ["/etc/shlink/entrypoint.sh"]
 
-CMD ["sh /etc/shlink/run-server.sh"]
+CMD ["/etc/shlink/run-server.sh"]
