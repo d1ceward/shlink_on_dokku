@@ -8,7 +8,6 @@ parse_url() {
 
 # prefix variables to avoid conflicts and run parse url function on arg url
 PREFIX="SHLINK_DB_" parse_url "$DATABASE_URL"
-echo "$SHLINK_DB_SCHEME://$SHLINK_DB_USER:$SHLINK_DB_PASSWORD@$SHLINK_DB_HOSTPORT/$SHLINK_DB_DATABASE"
 
 # Separate host and port
 SHLINK_DB_HOST="$(echo $SHLINK_DB_HOSTPORT | sed -e 's,:.*,,g')"
@@ -20,11 +19,6 @@ export DB_PORT=$SHLINK_DB_PORT
 export DB_NAME=$SHLINK_DB_DATABASE
 export DB_USER=$SHLINK_DB_USER
 export DB_PASSWORD=$SHLINK_DB_PASSWORD
-
-cd /etc/shlink
-
-# Create data directories if they do not exist. This allows data dir to be mounted as an empty dir if needed
-mkdir -p data/cache data/locks data/log data/proxies
 
 flags="--no-interaction --clear-db-cache"
 
@@ -40,6 +34,4 @@ fi
 
 php vendor/bin/shlink-installer init ${flags}
 
-if [ "$SHLINK_RUNTIME" = 'rr' ]; then
-  ./bin/rr serve -c config/roadrunner/.rr.yml
-fi
+exec "$@"
