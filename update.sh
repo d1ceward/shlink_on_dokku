@@ -8,7 +8,7 @@ echo -e "\033[0;32m====>\033[0m Initial check..."
 CURRENT_RELEASE=$(git tag --sort=version:refname | tail -1)
 
 # Get lastest release name
-RELEASE=$(curl -s https://api.github.com/repos/shlinkio/shlink/releases/latest | jq -r ".tag_name" | sed 's/Shlink@//g; s/\"//g')
+RELEASE=$(curl -s https://api.github.com/repos/shlinkio/shlink/releases/latest | jq -r ".tag_name" | sed 's/Shlink@//g; s/\"//g' | sed 's/v//g; s/\"//g')
 
 # Exit script if already up to date
 if [ $RELEASE = $CURRENT_RELEASE ]; then
