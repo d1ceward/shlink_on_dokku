@@ -20,7 +20,7 @@ fi
 sed -i "s#ARG SHLINK_VERSION.*#ARG SHLINK_VERSION=\"${RELEASE}\"#" Dockerfile
 
 # Replace README link to Shlink release
-SHLINK_BADGE="[![Shlink](https://img.shields.io/badge/Shlink-${RELEASE}-blue.svg)](https://github.com/shlinkio/shlink/releases/tag/Shlink%40${RELEASE})"
+SHLINK_BADGE="[![Shlink](https://img.shields.io/badge/Shlink-${RELEASE}-blue.svg)](https://github.com/shlinkio/shlink/releases/tag/v${RELEASE})"
 sed -i "s#\[\!\[Shlink\].*#${SHLINK_BADGE}#" README.md
 
 # Push changes
