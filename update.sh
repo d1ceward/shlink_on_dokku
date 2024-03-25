@@ -29,5 +29,5 @@ git commit -m "Update to Shlink version ${RELEASE}"
 git push origin master
 
 # Create tag
-git tag $RELEASE
+git tag "v${RELEASE}"
 git push --tags
