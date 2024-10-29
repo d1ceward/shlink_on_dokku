@@ -1,6 +1,6 @@
 ![](.github/images/repo_header.png)
 
-[![Shlink](https://img.shields.io/badge/Shlink-4.2.3-blue.svg)](https://github.com/shlinkio/shlink/releases/tag/v4.2.3)
+[![Shlink](https://img.shields.io/badge/Shlink-4.2.4-blue.svg)](https://github.com/shlinkio/shlink/releases/tag/v4.2.4)
 [![Dokku](https://img.shields.io/badge/Dokku-Repo-blue.svg)](https://github.com/dokku/dokku)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/d1ceward/minio_on_dokku/graphs/commit-activity)
 # Run Shlink on Dokku
